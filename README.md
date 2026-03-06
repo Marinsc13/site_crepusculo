@@ -83,14 +83,3 @@ O site possui um efeito visual no cursor:
 ### 🎬 Vídeo de Fundo
 A página inicial possui um **vídeo de fundo automático**, que muda dependendo do tema escolhido.
 
----
-
-# 🛠️ Tecnologias Utilizadas
-
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-
----
-
-# 📂 Estrutura do Projeto
