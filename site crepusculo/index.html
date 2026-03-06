@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Eclipse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="menu">
+
+<nav>
+
+<h2 class="logo">Eclipse</h2>
+
+<ul>
+
+<li><a href="#inicio">Início</a></li>
+<li><a href="#times">Times</a></li>
+<li><a href="#personagens">Personagens</a></li>
+<li><a href="#historia">História</a></li>
+
+</ul>
+
+<button id="modoTema" onclick="trocarTema()">🧛</button>
+
+</nav>
+
+</header>
+
+<!-- HOME -->
+<section class="home">
+
+<video autoplay muted loop id="videoFundo">
+    <source src="video/vampirotema.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="conteudo">
+
+<button onclick="entrarHistoria()">Entrar na história</button>
+
+</div>
+
+</section>
+
+<!-- SOBRE O LIVRO -->
+<section class="secao" id="historia">
+
+<h2>Sobre o Livro</h2>
+
+<button class="btn-livro" onclick="abrirLivro()">Abrir o Livro</button>
+
+<div class="livro" id="livro">
+
+<div class="pagina">
+
+<h3>Resumo</h3>
+
+<p>
+Eclipse é o terceiro livro da saga Crepúsculo, escrito por Stephenie Meyer.
+Bella Swan se encontra dividida entre dois mundos: o amor intenso por
+Edward Cullen e a amizade profunda com Jacob Black.
+Enquanto tenta entender seus sentimentos, uma nova ameaça surge,
+colocando todos em perigo.
+</p>
+
+</div>
+
+<div class="pagina">
+
+<h3>Conflito</h3>
+
+<p>
+Ataques misteriosos começam a acontecer em Seattle, revelando que
+um exército de vampiros está sendo criado. Para proteger Bella,
+os vampiros da família Cullen e os lobisomens precisam unir forças.
+No meio desse conflito, Bella precisa decidir qual será seu futuro
+e qual caminho escolher.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PERSONAGENS -->
+<section class="secao" id="personagens">
+<h2>Personagens</h2>
+
+<div class="cards">
+
+<div class="card" onclick="personagem('bella')">
+Bella Swan
+</div>
+
+<div class="card" onclick="personagem('edward')">
+Edward Cullen
+</div>
+
+<div class="card" onclick="personagem('jacob')">
+Jacob Black
+</div>
+
+</div>
+
+
+<div class="areaPersonagem">
+
+<div class="imagemPersonagem">
+<img id="imagemPersonagem" src="">
+</div>
+
+<div class="textoPersonagem">
+<p id="infoPersonagem"></p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TEAM -->
+<section class="time">
+
+<h2>De que lado você está?</h2>
+
+<button onclick="escolherEdward()">Team Edward</button>
+<button onclick="escolherJacob()">Team Jacob</button>
+
+<div class="areaTime">
+
+<img id="imagemTime">
+
+<p id="textoTime"></p>
+
+</div>
+
+</section>
+
+<!-- BATALHA FINAL -->
+<section class="secao" id="batalha">
+<h2>Batalha Final</h2>
+
+<p>Clique para ajudar na batalha!</p>
+
+<div class="barras">
+
+<div class="time">
+<h3>Vampiros</h3>
+<div class="barra">
+<div id="barraVampiro"></div>
+</div>
+<button onclick="atacarVampiro()">Atacar com Vampiros</button>
+</div>
+
+<div class="time">
+<h3>Lobos</h3>
+<div class="barra">
+<div id="barraLobo"></div>
+</div>
+<button onclick="atacarLobo()">Atacar com Lobos</button>
+</div>
+
+</div>
+
+<div id="efeitosBatalha"></div>
+
+<p id="resultadoBatalha"></p>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

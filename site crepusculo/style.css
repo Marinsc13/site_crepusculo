@@ -1,0 +1,520 @@
+
+body{
+font-family: 'Times New Roman', Times, serif;
+margin:0;
+background:#111;
+color:white;
+text-align:center;
+}
+
+/* menu */
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.8);
+backdrop-filter: blur(5px);
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo{
+color:white;
+font-size:24px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff4444;
+}
+
+/* seções */
+section{
+padding-top:100px;
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.secao{
+padding:50px;
+border-top:1px solid #333;
+}
+
+/* video inicial */
+.home{
+position:relative;
+height:100vh;
+overflow:hidden;
+}
+
+#videoFundo{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.1);
+z-index:-1;
+}
+
+.conteudo{
+position:absolute;
+top:65%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+}
+
+.conteudo h1{
+font-size:80px;
+margin-bottom:10px;
+text-shadow:0 0 20px red;
+}
+
+.conteudo p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+/* botão */
+button{
+padding:14px 35px;
+font-size:18px;
+background:#8b0000;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+button:hover{
+background:#b30000;
+transform:scale(1.08);
+box-shadow:0 0 15px red,
+           0 0 30px darkred;
+}
+
+button::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.4),
+transparent
+);
+transition:0.6s;
+}
+
+button:hover::before{
+left:100%;
+}
+
+/* card persinagme */
+.cards{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+background:#222;
+padding:20px;
+width:150px;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+.card:hover{
+background:#444;
+transform:scale(1.05);
+}
+
+/* personagem */
+.areaPersonagem{
+display:none;
+justify-content:center;
+align-items:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.imagemPersonagem{
+width:300px;
+height:300px;
+background:#222;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 20px black;
+}
+
+.imagemPersonagem img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.textoPersonagem{
+max-width:400px;
+font-size:18px;
+line-height:1.5;
+}
+
+/* times */
+.areaTime{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+margin-top:40px;
+}
+
+#imagemTime{
+width:400px;
+border-radius:15px;
+box-shadow:0px 0px 20px black;
+margin-bottom:20px;
+}
+
+#textoTime{
+max-width:600px;
+font-size:18px;
+line-height:1.6;
+}
+/* efeito fundo lobo */
+
+.loboTema{
+background:linear-gradient(black,#001a2e,#003a66);
+transition:1s;
+}
+
+/* batalha */
+.barras{
+display:flex;
+justify-content:center;
+gap:60px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.time{
+text-align:center;
+}
+
+.barra{
+width:250px;
+height:25px;
+background:#333;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:10px;
+}
+
+#barraVampiro{
+height:100%;
+width:0%;
+background:red;
+transition:0.4s;
+}
+
+#barraLobo{
+height:100%;
+width:0%;
+background:orange;
+transition:0.4s;
+}
+
+/* efeitos */
+.tremor{
+animation:tremor 0.3s;
+}
+
+@keyframes tremor{
+0%{transform:translate(2px,2px)}
+25%{transform:translate(-2px,-2px)}
+50%{transform:translate(2px,-2px)}
+75%{transform:translate(-2px,2px)}
+100%{transform:translate(0,0)}
+}
+
+/* temas */
+.vampiroTema{
+background:#200000;
+transition:1s;
+}
+
+.loboTema{
+background:#3b2a1a;
+transition:1s;
+}
+
+/* cursor de sangue */
+.blood-drop{
+position: fixed;
+width: 8px;
+height: 8px;
+background: red;
+border-radius: 50%;
+pointer-events: none;
+animation: cair 0.8s forwards;
+z-index: 9999;
+}
+
+@keyframes cair{
+
+0%{
+transform: scale(1);
+opacity: 1;
+}
+
+100%{
+transform: translateY(20px) scale(0.3);
+opacity: 0;
+}
+
+}
+
+/* botão */
+
+.btn-livro{
+padding:15px 30px;
+background:#b30000;
+border:none;
+border-radius:12px;
+color:white;
+font-size:20px;
+cursor:pointer;
+margin-top:20px;
+box-shadow:0 0 20px red;
+transition:0.3s;
+}
+
+.btn-livro:hover{
+transform:scale(1.1);
+}
+
+/* livro */
+
+.livro{
+display:flex;
+justify-content:center;
+gap:0;
+margin-top:40px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* páginas */
+
+.pagina{
+width:350px;
+padding:30px;
+background:#eaeaea;
+color:#222;
+border-radius:8px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:0.8s;
+}
+
+/* linha do meio do livro */
+
+.pagina:first-child{
+border-right:3px solid #ccc;
+}
+
+/* animação */
+
+.livro.ativo .pagina:first-child{
+transform:rotateY(-10deg);
+}
+
+.livro.ativo .pagina:last-child{
+transform:rotateY(10deg);
+}
+
+/* títulos */
+
+.pagina h3{
+color:#8b0000;
+margin-bottom:15px;
+text-align:center;
+}
+
+/* texto */
+
+.pagina p{
+line-height:1.6;
+text-align:center;
+}
+
+#modoTema{
+font-size:22px;
+padding:8px 15px;
+margin-left:20px;
+background:#111;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+#modoTema:hover{
+transform:scale(1.1);
+}
+
+/* tema vampiro */
+.temaVampiro{
+background:linear-gradient(
+180deg,
+#1a0000 0%,
+#300000 40%,
+#4b0000 70%,
+#1a0000 100%
+);
+
+color:#fff;
+transition:1s;
+}
+
+.temaVampiro .secao{
+background:rgba(50,0,0,0.4);
+border-top:1px solid rgba(255,0,0,0.2);
+}
+
+.temaVampiro header{
+background:rgba(30,0,0,0.9);
+}
+
+.temaVampiro button{
+background:#8b0000;
+box-shadow:0 0 15px red;
+}
+
+/* tema lobo */
+.temaLobo{
+background:#0b132b;
+color:#e0e6ff;
+}
+
+.temaLobo header{
+background:rgba(10,20,50,0.9);
+}
+
+.temaLobo button{
+background:#3a5ba0;
+box-shadow:0 0 15px #8aa6ff;
+}
+
+/* explosão */
+
+/* explosão */
+.explosao{
+position:absolute;
+font-size:30px;
+animation:explodir 0.6s forwards;
+pointer-events:none;
+}
+
+/* numero de dano */
+.dano{
+position:absolute;
+color:#ff4444;
+font-weight:bold;
+font-size:22px;
+animation:subirDano 1s forwards;
+}
+
+/* partículas */
+.particula{
+position:absolute;
+width:6px;
+height:6px;
+background:red;
+border-radius:50%;
+animation:particula 0.8s forwards;
+}
+
+@keyframes explodir{
+0%{transform:scale(0.5);opacity:1;}
+100%{transform:scale(2);opacity:0;}
+}
+
+@keyframes subirDano{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-40px);opacity:0;}
+}
+
+@keyframes particula{
+0%{transform:translate(0,0);opacity:1;}
+100%{transform:translate(
+calc(40px - 80px * random()),
+calc(40px - 80px * random())
+);opacity:0;}
+}
+
+#infoPersonagem::after{
+content:"|";
+animation: piscar 1s infinite;
+margin-left:5px;
+}
+
+@keyframes piscar{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+
+.areaPersonagem{
+animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer{
+from{
+opacity:0;
+transform:scale(0.9);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
